@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: revenue
+    description: This table contains the sum of the 'AMOUNT' column from the 'stg_payments' model, grouped by 'ORDER_ID'.
+    columns:
+      - name: order_id
+        description: The unique identifier for each order.
+        tests:
+          - unique
+          - not_null
+      - name: total_amount
+        description: The total amount of the order, calculated as the sum of the 'AMOUNT' column from the 'stg_payments' model.
+        tests:
+          - not_null
