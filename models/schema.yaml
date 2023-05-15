@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: revenues
+    description: This table contains the total revenue from the stg_payments model.
+    columns:
+      - name: total_revenue
+        description: The total revenue aggregated from the stg_payments model.
+        tests:
+          - not_null
+          - gt: 0
