@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: revenues
+    description: This model joins the orders and payments models on the ORDER_ID column and sums the AMOUNT column.
+    columns:
+      - name: order_id
+        description: The unique identifier for each order.
+        tests:
+          - unique
+          - not_null
+      - name: total_revenue
+        description: The total revenue generated from each order.
+        tests:
+          - not_null
